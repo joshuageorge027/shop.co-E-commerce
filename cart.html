@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body{
+        max-width: 100%;
+      }
+
+      .cart-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        gap: 15px;
+      }
+
+      .heading-1{
+        font-family: sans-serif;
+      }
+
+      .start-shopping {
+        background-color: black;
+        height: 49px;
+        /* padding: 1rem 3rem; */
+      
+        border-radius: 25px;
+        color: white;
+        width: 210px;
+        border: none;
+        cursor: pointer;
+        font-size: 17px;
+        font-family: sans-serif;
+      }
+
+
+
+      .close{
+        position: absolute;
+        left: 87%;
+        top: 6%;
+
+      }
+
+
+      .start-shopping:hover {
+        border: 2px solid black;
+        background-color: rgb(182, 182, 182);
+        color: black;
+        transition: 0.3s;
+        transform: scale(1.04);
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="close-container">
+    <a href="index.html" class="close"><img src="/image/icon-close.png" alt="" width="25"></a>
+    </div>
+    <section class="cart-details">
+      <img src="/image/shopping-cart-10925.png" alt="" width="40" />
+      <h1 class="heading-1">Your cart is empty</h1>
+      <button class="start-shopping">START SHOPPING</button>
+    </section>
+  </body>
+</html>

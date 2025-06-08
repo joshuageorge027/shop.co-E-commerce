@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <header id="heading">
+      <figure class="logo">
+        <img
+          src="/image/menu-alt-svgrepo-com.svg"
+          alt="hamburger"
+          width="40"
+          class="hamburger"
+          id="menu"
+        />
+        <a href="index.html"
+          ><img
+            src="./image/shop-cart.png"
+            alt=""
+            width="35"
+            height="34"
+            id="cart-logo"
+          />
+          <h1>SHOP.CO</h1></a
+        >
+      </figure>
+
+      <ul id="list">
+        <div class="list-items">
+          <figure class="contain-close-btn">
+            <img src="/image/icon-close.png" alt="close icon" id="close" />
+          </figure>
+
+          <li class="active"><a href="#">Home</a></li>
+          <li class="nav-item" onclick="toggleMenu()">
+            <span class="span-arrow"
+              >Shop
+              <span id="arrow" class="arrow"
+                ><img
+                  src="/image/arrow-down-3101.png"
+                  alt=""
+                  width="18"
+                  class="arrow-down" /></span
+            ></span>
+            <div id="submenu" class="submenu">
+              <a href="#">Men</a>
+              <a href="#">Women</a>
+              <a href="#">Shoes</a>
+            </div>
+          </li>
+
+          <li><a href="#">On Sale</a></li>
+          <li><a href="new-arrival.html">New Arrivals</a></li>
+          <li><a href="#">Brands</a></li>
+        </div>
+      </ul>
+
+      <div class="search-bar">
+        <input
+          type="search"
+          name=""
+          id="search-bar"
+          placeholder="search for products..."
+        />
+        <img
+          src="/image/search-2904.png"
+          alt="search icon"
+          class="search-icon"
+          width="20"
+        />
+      </div>
+
+      <div class="icons">
+        <img
+          src="/image/search-2904.png"
+          alt="search icon"
+          id="search"
+          width="20"
+        />
+        <a href="cart.html"
+          ><img
+            src="/image/shopping-cart-10925.png"
+            alt=""
+            width="20"
+            id="cart"
+        /></a>
+        <img src="/image/user-4250.png" alt="" width="20" id="user" />
+      </div>
+      <div id="overlay"></div>
+    </header>
+
+    <div id="search-mobile">
+      <input type="search" name="search" id="search-mobile-bar" />
+      <img
+        src="/image/search-2904.png"
+        alt=""
+        class="search-icon-mobile"
+        width="30"
+      />
+    </div>
+
+    <section class="your-style">
+      <div id="ssecon-overlay"></div>
+      <div class="form-container">
+        <form action="" id="sign-up" class="form-hidden anime">
+          <div class="inputss">
+            <div class="cancel-btn">
+              <!-- <button type="button" id="cancel">Cancel</button> -->
+              <img
+                src="/image/icon-close.png"
+                alt=""
+                id="cancel"
+                class="cancel-icon"
+                width="25"
+              />
+            </div>
+            <div class="form-1">
+              <label for="name">Name:</label>
+              <input type="text" name="name" id="name" />
+            </div>
+            <div class="form-2">
+              <label for="email">Email:</label>
+              <input type="email" name="email" id="email" />
+              <input type="submit" value="Sign up" id="sign-up-btn" />
+            </div>
+
+            <!-- <button ></button> -->
+          </div>
+        </form>
+      </div>
+      <h1>FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
+      <p>
+        Browse through our diverse range of meticulously crafted garment,
+        designed to bring out your individuality and cater to your sense of
+        style.
+      </p>
+      <button class="shop-now">Shop Now</button>
+      <section class="num">
+        <article class="numbers">
+          <div class="international-brands">
+            <h1>200+</h1>
+            <p>International Brands</p>
+          </div>
+          <div class="quality-product">
+            <h1>2,000+</h1>
+            <p>High-Quality Products</p>
+          </div>
+
+          <div class="happy-customers">
+            <h1>30,000+</h1>
+            <p>Happy Customers</p>
+          </div>
+        </article>
+        <div class="douple-display">
+          <h1>30,000+</h1>
+          <p>Happy Customers</p>
+        </div>
+      </section>
+
+      <img src="./image/4-pointed-stars.png" alt="" class="pointed" />
+      <img src="./image/4-pointed-stars.png" alt="" class="four-pointed" />
+    </section>
+
+    <div class="responsive-hero"></div>
+
+    <section class="brands">
+      <div class="text-brand">
+        <p>VERSACE</p>
+        <p>ZARA</p>
+        <p>GUCCI</p>
+      </div>
+      <div class="calvin-prada">
+        <p>PRADA</p>
+        <p>Calvin Klein</p>
+      </div>
+    </section>
+
+    <section id="arrival-container">
+      <h1>NEW ARRIVALS</h1>
+      <section class="new-arrivals">
+        <div class="black-shirt">
+          <img src="/image/black-shirt.png" alt="" class="image" />
+          <h3>T-shirt with Tape Details</h3>
+          <span class="stars"
+            ><img
+              src="/image/four-half-stars.png"
+              alt=""
+              class="stars-icons"
+              width="30"
+            />4.5/5</span
+          >
+          <div class="prices-and-percent">
+            <p>$120</p>
+            <div class="add-to-cart">
+              <img src="./image/orange-cart.png" alt="" width="20" />
+            </div>
+          </div>
+        </div>
+        <div class="trousers">
+          <img src="/image/blue-trousers.png" alt="" class="image" />
+          <h3>Skinny Fit Jeans</h3>
+          <span class="stars"
+            ><img
+              src="/image/three-half-stars.png"
+              alt=""
+              class="three-stars"
+            />3.5/5</span
+          >
+          <div class="prices-and-percent">
+            <p>$240</p>
+            <p class="dicount-price"><del>$260</del></p>
+            <p class="discount">-20%</p>
+            <div class="add-to-cart">
+              <img src="./image/orange-cart.png" alt="" width="20" />
+            </div>
+          </div>
+        </div>
+        <div class="purple-shirt">
+          <img src="/image/purple-shirt.png" alt="" class="image" />
+          <h3>Checkered Shirt</h3>
+          <span class="stars"
+            ><img
+              src="/image/four-half-stars.png"
+              alt=""
+              class="stars-icons"
+            />4.5/5</span
+          >
+          <div class="prices-and-percent">
+            <p>$180</p>
+            <div class="add-to-cart">
+              <img src="./image/orange-cart.png" alt="" width="20" />
+            </div>
+          </div>
+        </div>
+        <div class="black-orange-shirt">
+          <img src="/image/orange-black-shirt.png" alt="" class="image" />
+          <h3>Sleeve Striped T-shirt</h3>
+          <span class="stars"
+            ><img src="/image/four-half-stars.png"" alt=""
+            class="stars-icons">4.5/5</span
+          >
+          <div class="prices-and-percent">
+            <p>$130</p>
+            <p class="dicount-price"><del>$160</del></p>
+            <p class="discount">-30%</p>
+            <div class="add-to-cart">
+              <img src="./image/orange-cart.png" alt="" width="20" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <button class="view-all">View All</button>
+    </section>
+
+    <section class="top-selling-container">
+      <h1>TOP SELLING</h1>
+      <section class="top-selling">
+        <div class="vertical-striped">
+          <img src="/image/light-green-check.png" alt="" class="image" />
+          <h3>Vertcal Striped Shirt</h3>
+          <span class="stars"
+            ><img
+              src="/image/five-stars.png"
+              alt=""
+              class="stars-icons"
+            />5.5/5</span
+          >
+          <div class="prices-and-percent">
+            <p>$210</p>
+            <p class="dicount-price"><del>$232</del></p>
+            <p class="discount">-20%</p>
+            <div class="add-to-cart">
+              <img src="./image/orange-cart.png" alt="" width="20" />
+            </div>
+          </div>
+        </div>
+        <div class="graphic-t-shirt">
+          <img
+            src="/image/orange-shirt.png"
+            alt="courage Graphic T-shirt"
+            class="image"
+          />
+          <h3>Courage Graphic T-shirt</h3>
+          <span class="stars"
+            ><img
+              src="/image/four-half-stars.png"
+              alt=""
+              class="stars-icons"
+            />4.5/5</span
+          >
+          <div class="prices-and-percent">
+            <p>$145</p>
+            <div class="add-to-cart">
+              <img src="./image/orange-cart.png" alt="" width="20" />
+            </div>
+          </div>
+        </div>
+        <div class="bermuda-shorts">
+          <img
+            src="/image/blue-shorts.png"
+            alt="Loose Fit Bermuda Shorts"
+            class="image"
+          />
+          <h3>Loose Fit Bermuda Shorts</h3>
+          <span class="stars"
+            ><img
+              src="/image/three-half-stars.png"
+              alt=""
+              class="three-stars"
+            />3.0/5</span
+          >
+          <div class="prices-and-percent">
+            <p>$80</p>
+            <div class="add-to-cart">
+              <img src="./image/orange-cart.png" alt="" width="20" />
+            </div>
+          </div>
+        </div>
+        <div class="faded-jeans">
+          <img
+            src="/image/black-trousers.png"
+            alt="Faded Skinny Jeans"
+            class="image"
+          />
+          <h3>Faded Skinny Jeans</h3>
+          <span class="stars"
+            ><img
+              src="/image/four-half-stars.png"
+              alt=""
+              class="stars-icons"
+            />4.5/5</span
+          >
+          <div class="prices-and-percent">
+            <p>$210</p>
+            <div class="add-to-cart">
+              <img src="./image/orange-cart.png" alt="" width="20" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <button class="view-all">View All</button>
+    </section>
+
+    <section class="browse-container">
+      <div class="browse-dress-style">
+        <h1>BROWSE BY DRESS STYLE</h1>
+        <article class="dress-style">
+          <div class="dress-card">
+            <img src="./image/casual.png" alt="casual" class="casual" />
+            <img src="/image/formal.png" alt="formal" class="formal" />
+          </div>
+          <div class="dress-card-two">
+            <img src="/image/party.png" alt="party" class="party" />
+            <img src="/image/gym.png" alt="gym" class="gym" />
+          </div>
+          <div class="dress-style-mobile">
+            <img src="/image/casual-mobile.jpg" alt="" class="Browse" />
+            <img src="/image/formal-mobile.jpg" alt="" class="Browse" />
+            <img src="/image/party-mobile.jpg" alt="" class="Browse" />
+            <img src="/image/gym-mobile.jpg" alt="" class="Browse" />
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="banners">
+      <div class="first-banner">
+        <div class="first-banner-text">
+          <p>Spring / Summer</p>
+          <h1>FOOT WEAR COLLECTION</h1>
+          <p>The best classsic shoes are on sale</p>
+          <button class="learn-more">learn more</button>
+        </div>
+      </div>
+
+      <div class="second-banner">
+        <p>Winter Collections</p>
+        <h1>T-SHIRTS</h1>
+        <p>The best classic dress is one Sale</p>
+        <button class="Collection">Collection</button>
+      </div>
+
+      <div class="third-banner">
+        <p class="para">Crazy deals</p>
+        <h1>SEASONAL SALE</h1>
+        <p>The best classic dress is on Sale</p>
+        <button class="seasonal">learn more</button>
+      </div>
+    </section>
+
+    <section class="news-letter">
+      <div class="background">
+        <h1>STAY UPTO DATE ABOUT OUR LATEST OFFERS</h1>
+        <div class="sub-to-news">
+          <img src="/image/mail-142.png" alt="" width="27" class="mail" />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your email address"
+          />
+          <button type="button" class="button">Subscribe to Newsletter</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="links-and-socials">
+      <section class="footer-links">
+        <div class="logo-social">
+          <h1><img
+            src="./image/shop-cart.png"
+            alt=""
+            width="35"
+            height="34"
+            id="cart-logo"
+          />SHOP.CO</h1>
+          <p>
+            We have clothes that your style and which you're proud to wear. from
+            women to men.
+          </p>
+          <div class="social-medial">
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-github"></i></a>
+          </div>
+        </div>
+        <div class="company-help">
+          <div class="companay">
+            <h3>COMPANY</h3>
+            <ul class="list-links">
+              <li><a href="">About</a></li>
+              <li><a href="">Features</a></li>
+              <li><a href="">Work</a></li>
+              <li><a href="">Career</a></li>
+            </ul>
+          </div>
+          <div class="help">
+            <h3>HELP</h3>
+            <ul class="list-links">
+              <li><a href="">Customer Support</a></li>
+              <li><a href="">Delivery Details</a></li>
+              <li><a href="">Terms & Condititions</a></li>
+              <li><a href="">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-resources">
+          <div class="faq">
+            <h3>FAQ</h3>
+            <ul class="list-links">
+              <li><a href="">Account</a></li>
+              <li><a href="">Manage Deliveries</a></li>
+              <li><a href="">Orders</a></li>
+              <li><a href="">Payments</a></li>
+            </ul>
+          </div>
+          <div class="resources">
+            <h3>RESOURCES</h3>
+            <ul class="list-links">
+              <li><a href="">Free eBooks</a></li>
+              <li><a href="">Development Tutorial</a></li>
+              <li><a href="">How to - Blog</a></li>
+              <li><a href="">Youtube Playlist</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="payment-details">
+        <p>Shop.co © 2000-2023, All Rights Reserved</p>
+        <div class="payment"></div>
+      </section>
+    </footer>
+
+    <script>
+      const user = document.getElementById("user");
+      const form = document.getElementById("sign-up");
+      const cancel = document.getElementById("cancel");
+      const close = document.getElementById("close");
+      const menu = document.getElementById("menu");
+      const list = document.getElementById("list");
+      const overlay = document.getElementById("overlay");
+      const sseconOverlay = document.getElementById("ssecon-overlay");
+      const submenu = document.getElementById("submenu");
+      const arrow = document.getElementById("arrow");
+      const search = document.getElementById("search");
+      const searchMobile = document.getElementById("search-mobile");
+      const heading = document.getElementById("heading");
+
+      search.addEventListener("click", () => {
+        searchMobile.style.height = "120px";
+        overlay.style.display = "block";
+      });
+
+      menu.addEventListener("click", () => {
+        list.style.width = "90%";
+        overlay.style.display = "block";
+        form.style.display = "none";
+      });
+
+      close.addEventListener("click", () => {
+        list.style.width = "0";
+        overlay.style.display = "none";
+      });
+
+      sseconOverlay.addEventListener("click", () => {
+        form.style.display = "none";
+        sseconOverlay.style.display = "none";
+        overlay.style.display = "none";
+      });
+
+      overlay.addEventListener("click", () => {
+        overlay.style.display = "none";
+        list.style.width = "0";
+        form.style.display = "none";
+        sseconOverlay.style.display = "none";
+        searchMobile.style.height = "0";
+      });
+
+      function toggleMenu() {
+        const submenu = document.getElementById("submenu");
+        const arrow = document.getElementById("arrow");
+
+        if (submenu.style.display === "block") {
+          submenu.style.display = "none";
+          arrow.classList.remove("rotate");
+        } else {
+          submenu.style.display = "block";
+          arrow.classList.add("rotate");
+        }
+      }
+
+      const addToCartSection = document.getElementById("add-to-cart-section");
+      const cart = document.getElementById("cart");
+      cart.addEventListener("click", () => {
+        addToCartSection.style.width = "80%";
+      });
+
+      document.addEventListener("click", function (event) {
+        const submenu = document.getElementById("submenu");
+        const arrow = document.getElementById("arrow");
+
+        if (submenu.style.display === "block") {
+          if (
+            !submenu.contains(event.target) &&
+            !arrow.contains(event.target)
+          ) {
+            submenu.style.display = "none";
+            arrow.classList.remove("rotate");
+          }
+        }
+      });
+      const logIn = document.getElementById("log-in");
+
+      user.addEventListener("click", () => {
+        form.style.display = "block";
+        overlay.style.display = "block";
+        sseconOverlay.style.display = "block";
+      });
+
+      cancel.addEventListener("click", () => {
+        form.style.display = "none";
+        overlay.style.display = "none";
+        sseconOverlay.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
+
