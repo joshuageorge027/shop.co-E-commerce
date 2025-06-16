@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>shop.html</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --white: rgb(255, 255, 255);
+        --grey-100: rgb(241, 241, 241);
+        --grey-200: rgb(236, 236, 236);
+        --grey-300: rgb(179, 179, 179);
+        --grey-400: rgb(189, 189, 189);
+        --grey-500: rgb(122, 121, 121);
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      #heading {
+        display: flex;
+        gap: 60px;
+        padding: 0.7rem 4.8rem;
+        position: sticky;
+        top: 0;
+        left: 0;
+        background-color: white;
+        box-shadow: 0 5px 14px rgb(0, 0, 0, 0.1);
+        z-index: 10;
+        overflow: visible;
+      }
+
+      .icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .submenu {
+        display: none;
+        background-color: white;
+        z-index: 999;
+        position: absolute;
+        padding: 10px 3rem;
+        top: 180%;
+        left: -30px;
+        border-radius: 10px;
+        box-shadow: 0 10px 15px rgb(0, 0, 0, 0.3);
+        cursor: pointer;
+      }
+      .submenu a {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .submenu a {
+        display: block;
+        padding: 5px 0;
+        font-size: 35px;
+      }
+
+      /* .arrow-down {
+        margin-top: 5px;
+        width: 14px;
+      }
+
+      .arrow {
+        display: inline-block;
+        transition: transform 0.2s ease;
+      }
+
+      .arrow.rotate {
+        transform: rotate(180deg);
+      } */
+
+      #list {
+        display: flex;
+        gap: 20px;
+      }
+
+      .hamburger {
+        display: none;
+      }
+
+      .logo a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+      }
+
+      .list-items {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        position: relative;
+      }
+
+      #close {
+        display: none;
+      }
+
+      .logo h1 {
+        font-weight: 900;
+        font-size: 32px;
+        font-family: sans-serif;
+      }
+
+      #list a {
+        text-decoration: none;
+        color: var(--grey-500);
+        font-size: 19px;
+      }
+
+      #list a:hover {
+        color: black;
+        /* color: blue; */
+        transition: 0.5s ease;
+      }
+      #list a:focus {
+        color: black;
+        transition: 0.5s ease;
+      }
+
+      #list a:hover::after {
+        content: "";
+        position: absolute;
+        width: 60%;
+        height: 2px;
+        background-color: black;
+        /* background-color: blue; */
+        bottom: -4px;
+        left: 3px;
+        color: var(--grey-300);
+        transition: 0.3s ease;
+      }
+      #list a:focus::after {
+        content: "";
+        position: absolute;
+        width: 60%;
+        height: 2px;
+        background-color: black;
+        /* background-color: blue; */
+        bottom: -4px;
+        left: 3px;
+        color: var(--grey-300);
+        transition: 0.3s ease;
+      }
+
+      #list li {
+        list-style-type: none;
+        position: relative;
+      }
+
+      #list li {
+        list-style-type: none;
+        position: relative;
+      }
+
+      .search-bar {
+        display: flex;
+        align-items: center;
+        width: 30%;
+        position: relative;
+      }
+
+      input[type="search"] {
+        width: 100%;
+        height: 40px;
+        border-radius: 20px;
+        border: none;
+        background-color: var(--grey-200);
+        padding: 20px 20px 20px 40px;
+        outline: none;
+        font-size: 15px;
+      }
+
+      ::placeholder {
+        color: var(--grey-300);
+      }
+
+      .search-icon {
+        position: absolute;
+        top: 48%;
+        right: auto;
+        left: 15px;
+        transform: translateY(-50%);
+        opacity: 0.6;
+      }
+
+      #search {
+        display: none;
+        cursor: pointer;
+      }
+
+      #cart {
+        cursor: pointer;
+      }
+
+      #user {
+        cursor: pointer;
+      }
+
+      #search-mobile {
+        display: none;
+      }
+
+      #overlay {
+        display: none;
+        width: 0;
+      }
+
+      #ssecon-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(5px);
+        background: rgb(0, 0, 0, 0.2);
+        z-index: 50;
+        display: none;
+      }
+
+      #close {
+        display: none;
+      }
+      #sign-up {
+        background-color: var(--grey-200);
+        width: 87%;
+        height: auto;
+        z-index: 100000;
+        position: fixed;
+        left: 7%;
+        border: 2px solid black;
+        border-radius: 20px;
+        display: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+        padding: 30px 20px;
+      }
+
+      .anime {
+        animation-name: animate;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in-out;
+      }
+
+      @keyframes animate {
+        0% {
+          -webkit-transform: scale(0);
+        }
+        100% {
+          -webkit-transform: scale(1);
+        }
+      }
+
+      #sign-up.form-visible {
+        opacity: 1;
+      }
+
+      #sign-up.form-hidden {
+        display: none;
+      }
+
+      .inputss {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        border: none;
+      }
+
+      #sign-up input {
+        width: 100%;
+        height: 40px;
+        border-radius: 10px;
+        outline: none;
+        padding-left: 20px;
+        border: 1px solid black;
+      }
+
+      label {
+        text-align: left;
+        font-size: 25px;
+      }
+
+      #sign-up-btn {
+        width: 100%;
+        height: 45px;
+        border-radius: 10px;
+        outline: none;
+        border: 1px solid white;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        font-size: 19px;
+        font-family: sans-serif;
+        color: white;
+        background-color: black;
+        margin-bottom: 30px;
+      }
+
+      #sign-up-btn:hover {
+        background-color: white;
+        border: 2px solid black;
+        color: black;
+        transition: 0.5s ease;
+      }
+
+      .form-1,
+      .form-2 {
+        width: 100%;
+      }
+
+      #sign-up input {
+        width: 100%;
+        height: 40px;
+        border-radius: 10px;
+        outline: none;
+        border: 1px solid black;
+      }
+
+      label {
+        text-align: left;
+      }
+
+      .cancel-btn {
+        position: absolute;
+        top: 0;
+        left: 85%;
+      }
+
+      #sign-up-btn {
+        width: 20%;
+        height: 40px;
+        border-radius: 10px;
+        outline: none;
+        border: 1px solid white;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        color: white;
+        background-color: black;
+      }
+
+      #sign-up-btn:hover {
+        background-color: white;
+        border: 2px solid rgb(124, 23, 23);
+        color: black;
+        transition: 0.5s;
+      }
+
+      .cancel-btn {
+        position: relative;
+      }
+
+      #search-mobile {
+        display: none;
+      }
+
+      @media screen and (max-width: 768px) {
+        #heading {
+          padding: 1rem 2rem;
+          position: fixed;
+          top: -9px;
+          display: flex;
+          gap: 20px;
+          width: 100%;
+          background-color: white;
+        }
+
+        #menu {
+          display: block;
+          width: 30px;
+          cursor: pointer;
+          transition: 0.5s;
+        }
+
+        #close {
+          display: block;
+          width: 25px;
+          height: 25px;
+          cursor: pointer;
+          position: absolute;
+          left: 80%;
+          right: 5%;
+          transition: 0.5s;
+        }
+
+        #list {
+          background-color: white;
+          position: fixed;
+          left: -40px;
+          top: 0;
+          height: 200vh;
+          width: 0;
+          padding: 20px;
+          overflow-x: hidden;
+          transition: 0.5s;
+          z-index: 1000;
+        }
+
+        .list-items {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 25px;
+          text-align: left;
+          width: 100%;
+        }
+
+        .contain-close-btn {
+          width: 100%;
+          display: block;
+        }
+        #list a {
+          font-size: 27px;
+        }
+
+        #list a:hover {
+          color: black;
+        }
+
+        #list a:hover::after {
+          all: unset;
+          color: black;
+        }
+        #list a:focus::after {
+          all: unset;
+          font-weight: 600;
+        }
+        #search-bar {
+          display: none;
+        }
+        .search-icon {
+          display: none;
+        }
+
+        #search {
+          display: block;
+          cursor: pointer;
+        }
+
+        .logo {
+          display: flex;
+          gap: 8px;
+        }
+
+        .logo h1 {
+          font-size: 28px;
+          font-family: sans-serif;
+        }
+
+        #cart-logo {
+          width: 25px;
+          height: 25px;
+        }
+
+        #overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 200vh;
+          backdrop-filter: blur(5px);
+          background: rgb(0, 0, 0, 0.2);
+          z-index: 10;
+          display: none;
+        }
+
+        #ssecon-overlay {
+          all: unset;
+        }
+
+        #search-mobile {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          z-index: 1000;
+          background-color: white;
+          padding: 30px 15px;
+          width: 100%;
+          height: 0;
+          overflow-y: hidden;
+          position: absolute;
+          z-index: 1000;
+          top: -60px;
+          transition: 0.5s;
+        }
+
+        #search-mobile input {
+          display: block;
+          width: 100%;
+          height: 50px;
+          border: 1px solid black;
+          padding-left: 50px;
+          border-radius: 7px;
+          margin-top: 30px;
+        }
+
+        .search-icon-mobile {
+          position: absolute;
+          top: 70px;
+          left: 25px;
+        }
+
+        #cart {
+          cursor: pointer;
+        }
+
+        #user {
+          cursor: pointer;
+        }
+
+        #cart,
+        #user {
+          width: 23px;
+          margin: 0;
+          cursor: pointer;
+        }
+        .head {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 1rem 0;
+          margin: 5rem 0 0 0;
+          background-color: white;
+          box-shadow: 2px 5px 14px rgb(0, 0, 0, 0.1);
+        }
+
+        .wemen-section li,
+        .men-section li {
+          list-style-type: none;
+        }
+        .wemen-section a,
+        .men-section a {
+          text-decoration: none;
+          font-size: 20px;
+          color: black;
+          font-family: sans-serif;
+          font-weight: 600;
+          padding: 5px 20px 5px 20px;
+        }
+
+        .home,
+        .clothing,
+        .shoes,
+        .new-arrival,
+        .brand,
+        .casual,
+        .formal,
+        .assessories,
+        .active-wearss,
+        .trainers {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          padding: 3rem 0.7rem;
+          background-color: rgb(224, 226, 230);
+          z-index: 1;
+        }
+
+
+
+         .home:hover .home-image ,
+        .clothing:hover .clothing-imge,
+        .shoes:hover  .image-items,
+        .new-arrival:hover .new-arrival-img,
+        .brand:hover .brand-image,
+        .casual:hover .image-casual-items,
+        .formal:hover .formal-image,
+        .assessories:hover .assesories,
+        .active-wearss:hover .acrive-wears ,
+        .trainers:hover .trainers-image{
+          opacity: 0.7;
+        }
+
+         .home:hover a,
+        .clothing:hover a,
+        .shoes:hover  a,
+        .new-arrival:hover a,
+        .brand:hover a,
+        .casual:hover a,
+        .formal:hover a,
+        .assessories:hover a,
+        .active-wearss:hover a,
+        .trainers:hover a{
+          color: rgb(128, 127, 127);
+        }
+
+         .home:hover,
+        .clothing:hover,
+        .shoes:hover,
+        .new-arrival:hover,
+        .brand:hover,
+        .casual:hover,
+        .formal:hover,
+        .assessories:hover,
+        .active-wearss:hover,
+        .trainers:hover{
+          background-color: rgb(227, 228, 231);
+        }
+
+        .genre {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 15px;
+          padding: 1rem;
+        }
+        .genre a {
+          color: black;
+          font-size: 15px;
+          font-family: sans-serif;
+        }
+
+        .genre-images {
+          position: relative;
+        }
+
+        .image-items {
+          width: 130%;
+          position: absolute;
+          left: 560%;
+          top: -240%;
+          z-index: 100;
+        }
+
+        .image-casual-items {
+          width: 230%;
+          position: absolute;
+          left: 418%;
+          top: -240%;
+          z-index: 100;
+        }
+
+        .clothing-imge {
+          width: 95%;
+          position: absolute;
+          left: 380%;
+          top: -250%;
+          z-index: 100;
+        }
+
+        .brand-image {
+          width: 97%;
+          position: absolute;
+          left: 470%;
+          top: -235%;
+          z-index: 100;
+        }
+
+        .formal-image {
+          width: 160%;
+          position: absolute;
+          left: 445%;
+          top: -265%;
+          z-index: 100;
+        }
+
+        .home-image {
+          width: 150%;
+          position: absolute;
+          left: 670%;
+          top: -199%;
+          z-index: 100;
+        }
+
+        .new-arrival-img {
+          width: 115%;
+          position: absolute;
+          left: 270%;
+          top: -239%;
+          z-index: 100;
+        }
+
+        .assesories {
+          width: 56%;
+          position: absolute;
+          left: 275%;
+          top: -208%;
+          z-index: 100;
+        }
+
+        .acrive-wears {
+          width: 77%;
+          position: absolute;
+          left: 260%;
+          top: -176%;
+          z-index: 100;
+        }
+        .trainers-image {
+          width: 180%;
+          position: absolute;
+          left: 325%;
+          top: -236%;
+          z-index: 100;
+        }
+
+        .tab {
+          border: none;
+          background: none;
+          padding: 10px 20px;
+          font-weight: bold;
+          font-size: 25px;
+          border-bottom: 3px solid transparent;
+          cursor: pointer;
+        }
+
+        .gender-tabs {
+          display: flex;
+          gap: 150px;
+        }
+
+        .tab.active {
+          border-bottom: 3px solid black;
+        }
+      }
+
+      @media screen and (max-width: 412px) {
+        #heading {
+          padding: 1.4rem 1rem;
+          gap: 15px;
+          justify-content: space-between;
+          position: fixed;
+          top: -12px;
+          width: 100%;
+        }
+        .logo {
+          display: flex;
+          gap: 5px;
+        }
+
+        .logo h1 {
+          font-size: 24px;
+        }
+
+        #list {
+          gap: 10px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .nav-item {
+          cursor: pointer;
+        }
+
+        #submenu {
+          display: none;
+          margin-left: 5px;
+          padding: 10px 1rem;
+          position: static;
+          box-shadow: none;
+          width: 100%;
+          background-color: transparent;
+        }
+
+        .home,
+        .clothing,
+        .shoes,
+        .new-arrival,
+        .brand,
+        .casual,
+        .formal,
+        .assessories,
+        .active-wearss,
+        .trainers {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          padding: 3rem 0.7rem;
+          background-color: rgb(224, 226, 230);
+          z-index: 1;
+        }
+
+        .home:hover .home-image ,
+        .clothing:hover .clothing-imge,
+        .shoes:hover  .image-items,
+        .new-arrival:hover .new-arrival-img,
+        .brand:hover .brand-image,
+        .casual:hover .image-casual-items,
+        .formal:hover .formal-image,
+        .assessories:hover .assesories,
+        .active-wearss:hover .acrive-wears ,
+        .trainers:hover .trainers-image{
+          opacity: 0.7;
+          /* background-color: rgb(167, 165, 165); */
+        }
+
+         .home:hover a,
+        .clothing:hover a,
+        .shoes:hover  a,
+        .new-arrival:hover a,
+        .brand:hover a,
+        .casual:hover a,
+        .formal:hover a,
+        .assessories:hover a,
+        .active-wearss:hover a,
+        .trainers:hover a{
+          color: rgb(128, 127, 127);
+        }
+
+         .home:hover,
+        .clothing:hover,
+        .shoes:hover,
+        .new-arrival:hover,
+        .brand:hover,
+        .casual:hover,
+        .formal:hover,
+        .assessories:hover,
+        .active-wearss:hover,
+        .trainers:hover{
+          background-color: rgb(227, 228, 231);
+        }
+
+        .image-items {
+          width: 130%;
+          position: absolute;
+          left: 560%;
+          top: -240%;
+          z-index: 100;
+        }
+
+        .image-casual-items {
+          width: 230%;
+          position: absolute;
+          left: 418%;
+          top: -240%;
+          z-index: 100;
+        }
+
+        .clothing-imge {
+          width: 95%;
+          position: absolute;
+          left: 380%;
+          top: -250%;
+          z-index: 100;
+        }
+
+        .brand-image {
+          width: 97%;
+          position: absolute;
+          left: 470%;
+          top: -235%;
+          z-index: 100;
+        }
+
+        .formal-image {
+          width: 160%;
+          position: absolute;
+          left: 445%;
+          top: -265%;
+          z-index: 100;
+        }
+
+        .home-image {
+          width: 150%;
+          position: absolute;
+          left: 670%;
+          top: -199%;
+          z-index: 100;
+        }
+
+        .new-arrival-img {
+          width: 115%;
+          position: absolute;
+          left: 270%;
+          top: -239%;
+          z-index: 100;
+        }
+
+        .assesories {
+          width: 56%;
+          position: absolute;
+          left: 275%;
+          top: -208%;
+          z-index: 100;
+        }
+
+        .acrive-wears {
+          width: 77%;
+          position: absolute;
+          left: 260%;
+          top: -176%;
+          z-index: 100;
+        }
+        .trainers-image {
+          width: 180%;
+          position: absolute;
+          left: 325%;
+          top: -236%;
+          z-index: 100;
+        }
+
+        .gender-tabs {
+          display: flex;
+          gap: 150px;
+        }
+
+        .section {
+          display: block;
+        }
+
+        .hidden {
+          display: none;
+        }
+
+        .tab {
+          padding: 10px 20px;
+          font-weight: bold;
+          border: none;
+          background: none;
+          border-bottom: 2px solid transparent;
+          cursor: pointer;
+        }
+
+        .tab.active {
+          border-bottom: 2px solid black;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header id="heading">
+      <figure class="logo">
+        <img
+          src="/image/menu-alt-svgrepo-com.svg"
+          alt="hamburger"
+          width="40"
+          class="hamburger"
+          id="menu"
+        />
+        <a href="index.html"
+          ><img
+            src="./image/shop-cart.png"
+            alt=""
+            width="35"
+            height="34"
+            id="cart-logo"
+          />
+          <h1>SHOP.CO</h1></a
+        >
+      </figure>
+
+      <ul id="list">
+        <div class="list-items">
+          <figure class="contain-close-btn">
+            <img src="/image/icon-close.png" alt="close icon" id="close" />
+          </figure>
+
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+
+          <li><a href="#">On Sale</a></li>
+          <li><a href="new-arrival.html">New Arrivals</a></li>
+          <li><a href="#">Brands</a></li>
+        </div>
+      </ul>
+
+      <div class="search-bar">
+        <input
+          type="search"
+          name=""
+          id="search-bar"
+          placeholder="search for products..."
+        />
+        <img
+          src="/image/search-2904.png"
+          alt="search icon"
+          class="search-icon"
+          width="20"
+        />
+      </div>
+
+      <div class="icons">
+        <img
+          src="/image/search-2904.png"
+          alt="search icon"
+          id="search"
+          width="20"
+        />
+        <a href="cart.html"
+          ><img
+            src="/image/shopping-cart-10925.png"
+            alt=""
+            width="20"
+            id="cart"
+        /></a>
+        <img src="/image/user-4250.png" alt="" width="20" id="user" />
+      </div>
+      <div id="overlay"></div>
+    </header>
+    <div id="ssecon-overlay"></div>
+    <div class="form-container">
+      <form action="" id="sign-up" class="form-hidden anime">
+        <div class="inputss">
+          <div class="cancel-btn">
+            <!-- <button type="button" id="cancel">Cancel</button> -->
+            <img
+              src="/image/icon-close.png"
+              alt=""
+              id="cancel"
+              class="cancel-icon"
+              width="25"
+            />
+          </div>
+          <div class="form-1">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" />
+          </div>
+          <div class="form-2">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" />
+            <input type="submit" value="Sign up" id="sign-up-btn" />
+          </div>
+
+          <!-- <button ></button> -->
+        </div>
+      </form>
+    </div>
+    <div id="search-mobile">
+      <input type="search" name="search" id="search-mobile-bar" />
+      <img
+        src="/image/search-2904.png"
+        alt=""
+        class="search-icon-mobile"
+        width="30"
+      />
+    </div>
+
+    <div class="head">
+      <div class="gender-tabs">
+        <button class="tab" id="women-tab">Women</button>
+        <button class="tab active" id="men-tab">Men</button>
+      </div>
+    </div>
+
+    <article class="gender-sections">
+      <section class="genre" id="men-section" class="section">
+        <div class="home">
+          <a href="index.html" class="genre-images">
+            <h1>HOME</h1>
+            <img src="/image/home.png" alt="" class="home-image" />
+          </a>
+        </div>
+        <div class="clothing">
+          <a href="" class="genre-images">
+            <h1>CLOTHING</h1>
+            <img src="/image/clothing.png" alt="" class="clothing-imge" />
+          </a>
+        </div>
+        <div class="shoes">
+          <a href="" class="genre-images">
+            <h1>SHOES</h1>
+            <img src="/image/shoess.png" alt="" class="image-items" />
+          </a>
+        </div>
+        <div class="brand">
+          <a href="" class="genre-images">
+            <h1>BRANDS</h1>
+            <img src="/image/brand-image.png" alt="" class="brand-image" />
+          </a>
+        </div>
+        <div class="casual">
+          <a href="" class="genre-images">
+            <h1>CASUAL</h1>
+            <img
+              src="/image/shop-image.png"
+              alt=""
+              class="image-casual-items"
+            />
+          </a>
+        </div>
+        <div class="formal">
+          <a href="" class="genre-images">
+            <h1>FORMAL</h1>
+            <img src="/image/formal-image.png" alt="" class="formal-image" />
+          </a>
+        </div>
+        <div class="new-arrival">
+          <a href="" class="genre-images">
+            <h1>NEW ARRIVAL</h1>
+            <img src="/image/new-arrival.png" alt="" class="new-arrival-img" />
+          </a>
+        </div>
+        <div class="assessories">
+          <a href="" class="genre-images">
+            <h1>ASSESORIRES</h1>
+            <img src="/image/assesories.png" alt="" class="assesories" />
+          </a>
+        </div>
+        <div class="active-wearss">
+          <a href="" class="genre-images">
+            <h1>ACTIVEWEARS</h1>
+            <img src="/image/active-wears.png" alt="" class="acrive-wears" />
+          </a>
+        </div>
+        <div class="trainers">
+          <a href="" class="genre-images">
+            <h1>TRAINERS</h1>
+            <img src="/image/male-trainers.png" alt="Male trainers" class="trainers-image"/>
+          </a>
+        </div>
+      </section>
+
+      <section id="women-section" class="section hidden"></section>
+    </article>
+
+    <script>
+      const user = document.getElementById("user");
+      const form = document.getElementById("sign-up");
+      const cancel = document.getElementById("cancel");
+      const close = document.getElementById("close");
+      const menu = document.getElementById("menu");
+      const list = document.getElementById("list");
+      const overlay = document.getElementById("overlay");
+      const sseconOverlay = document.getElementById("ssecon-overlay");
+      const submenu = document.getElementById("submenu");
+      const arrow = document.getElementById("arrow");
+      const search = document.getElementById("search");
+      const searchMobile = document.getElementById("search-mobile");
+      const heading = document.getElementById("heading");
+
+      search.addEventListener("click", () => {
+        searchMobile.style.height = "120px";
+        overlay.style.display = "block";
+      });
+
+      menu.addEventListener("click", () => {
+        list.style.width = "90%";
+        overlay.style.display = "block";
+        form.style.display = "none";
+      });
+
+      close.addEventListener("click", () => {
+        list.style.width = "0";
+        overlay.style.display = "none";
+      });
+
+      sseconOverlay.addEventListener("click", () => {
+        form.style.display = "none";
+        sseconOverlay.style.display = "none";
+        overlay.style.display = "none";
+      });
+
+      overlay.addEventListener("click", () => {
+        overlay.style.display = "none";
+        list.style.width = "0";
+        form.style.display = "none";
+        sseconOverlay.style.display = "none";
+        searchMobile.style.height = "0";
+      });
+
+      const logIn = document.getElementById("log-in");
+
+      user.addEventListener("click", () => {
+        form.style.display = "block";
+        overlay.style.display = "block";
+        sseconOverlay.style.display = "block";
+      });
+
+      cancel.addEventListener("click", () => {
+        form.style.display = "none";
+        overlay.style.display = "none";
+        sseconOverlay.style.display = "none";
+      });
+
+      const tabs = document.querySelectorAll(".tab");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((btn) => btn.classList.remove("active"));
+          tab.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>

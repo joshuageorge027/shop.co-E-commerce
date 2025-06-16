@@ -3,11 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Shop.co</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap"/>
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+    />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
     <script src="script.js"></script>
   </head>
   <body>
@@ -39,22 +45,7 @@
           </figure>
 
           <li class="active"><a href="#">Home</a></li>
-          <li class="nav-item" onclick="toggleMenu()">
-            <span class="span-arrow"
-              >Shop
-              <span id="arrow" class="arrow"
-                ><img
-                  src="/image/arrow-down-3101.png"
-                  alt=""
-                  width="18"
-                  class="arrow-down" /></span
-            ></span>
-            <div id="submenu" class="submenu">
-              <a href="#">Men</a>
-              <a href="#">Women</a>
-              <a href="#">Shoes</a>
-            </div>
-          </li>
+          <li><a href="shop.html">Shop</a></li>
 
           <li><a href="#">On Sale</a></li>
           <li><a href="new-arrival.html">New Arrivals</a></li>
@@ -141,7 +132,7 @@
         designed to bring out your individuality and cater to your sense of
         style.
       </p>
-      <button class="shop-now">Shop Now</button>
+      <button class="shop-now" onclick="window.location.href='shop.html'">Shop Now</button>
       <section class="num">
         <article class="numbers">
           <div class="international-brands">
@@ -199,7 +190,12 @@
           <div class="prices-and-percent">
             <p>$120</p>
             <div class="add-to-cart">
-              <img src="./image/orange-cart.png" alt="" width="20" />
+              <img
+                src="image/orange-cart.png"
+                alt=""
+                width="20"
+                onclick="addToCart('T-shirt with Tape Details', 120, 'Large','Black','/image/black-shirt.png')"
+              />
             </div>
           </div>
         </div>
@@ -218,7 +214,12 @@
             <p class="dicount-price"><del>$260</del></p>
             <p class="discount">-20%</p>
             <div class="add-to-cart">
-              <img src="./image/orange-cart.png" alt="" width="20" />
+              <img
+                src="./image/orange-cart.png"
+                alt=""
+                width="20"
+                onclick="addToCart('Skinny Fit Jeans', 240, 'Large','Blue','/image/blue-trousers.png')"
+              />
             </div>
           </div>
         </div>
@@ -235,7 +236,12 @@
           <div class="prices-and-percent">
             <p>$180</p>
             <div class="add-to-cart">
-              <img src="./image/orange-cart.png" alt="" width="20" />
+              <img
+                src="./image/orange-cart.png"
+                alt=""
+                width="20"
+                onclick="addToCart('Checkered Shirt', 180, 'Large','red','/image/purple-shirt.png')"
+              />
             </div>
           </div>
         </div>
@@ -251,7 +257,12 @@
             <p class="dicount-price"><del>$160</del></p>
             <p class="discount">-30%</p>
             <div class="add-to-cart">
-              <img src="./image/orange-cart.png" alt="" width="20" />
+              <img
+                src="./image/orange-cart.png"
+                alt=""
+                width="20"
+                onclick="addToCart('Sleeve Striped T-shirt', 130, 'Small','orange','/image/orange-black-shirt.png')"
+              />
             </div>
           </div>
         </div>
@@ -277,10 +288,16 @@
             <p class="dicount-price"><del>$232</del></p>
             <p class="discount">-20%</p>
             <div class="add-to-cart">
-              <img src="./image/orange-cart.png" alt="" width="20" />
+              <img
+                src="./image/orange-cart.png"
+                alt=""
+                width="20"
+                onclick="addToCart('Vertcal Striped Shirt', 210, 'Small','green','/image/light-green-check.png')"
+              />
             </div>
           </div>
         </div>
+
         <div class="graphic-t-shirt">
           <img
             src="/image/orange-shirt.png"
@@ -298,10 +315,16 @@
           <div class="prices-and-percent">
             <p>$145</p>
             <div class="add-to-cart">
-              <img src="./image/orange-cart.png" alt="" width="20" />
+              <img
+                src="./image/orange-cart.png"
+                alt=""
+                width="20"
+                onclick="addToCart('Courage Graphic T-shirt', 145, 'Small','orange','/image/orange-shirt.png')"
+              />
             </div>
           </div>
         </div>
+
         <div class="bermuda-shorts">
           <img
             src="/image/blue-shorts.png"
@@ -319,7 +342,12 @@
           <div class="prices-and-percent">
             <p>$80</p>
             <div class="add-to-cart">
-              <img src="./image/orange-cart.png" alt="" width="20" />
+              <img
+                src="./image/orange-cart.png"
+                alt=""
+                width="20"
+                onclick="addToCart('Loose Fit Bermuda Shorts', 80, 'Small','Blue','/image/blue-shorts.png')"
+              />
             </div>
           </div>
         </div>
@@ -340,7 +368,12 @@
           <div class="prices-and-percent">
             <p>$210</p>
             <div class="add-to-cart">
-              <img src="./image/orange-cart.png" alt="" width="20" />
+              <img
+                src="./image/orange-cart.png"
+                alt=""
+                width="20"
+                onclick="addToCart('Faded Skinny Jeans', 210, 'Small','Black','/image/black-trousers.png')"
+              />
             </div>
           </div>
         </div>
@@ -414,13 +447,15 @@
     <footer class="links-and-socials">
       <section class="footer-links">
         <div class="logo-social">
-          <h1><img
-            src="./image/shop-cart.png"
-            alt=""
-            width="35"
-            height="34"
-            id="cart-logo"
-          />SHOP.CO</h1>
+          <h1>
+            <img
+              src="./image/shop-cart.png"
+              alt=""
+              width="35"
+              height="34"
+              id="cart-logo"
+            />SHOP.CO
+          </h1>
           <p>
             We have clothes that your style and which you're proud to wear. from
             women to men.
@@ -571,7 +606,23 @@
         overlay.style.display = "none";
         sseconOverlay.style.display = "none";
       });
+
+      function addToCart(name, price, size, color, image) {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const existing = cart.find(
+          (item) =>
+            item.name === name && item.size === size && item.color === color
+        );
+
+        if (existing) {
+          existing.quantity += 1;
+        } else {
+          cart.push({ name, price, size, color, image, quantity: 1 });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        window.location.href = "cart.html"; // Boom! Send them to cart
+      }
     </script>
   </body>
 </html>
-
