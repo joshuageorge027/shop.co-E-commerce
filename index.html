@@ -88,7 +88,7 @@
     </header>
 
     <div id="search-mobile">
-      <input type="search" name="search" id="search-mobile-bar" />
+      <input type="search" name="search" id="search-mobile-bar" placeholder="Search for products..."/>
       <img
         src="/image/search-2904.png"
         alt=""
@@ -132,7 +132,9 @@
         designed to bring out your individuality and cater to your sense of
         style.
       </p>
-      <button class="shop-now" onclick="window.location.href='shop.html'">Shop Now</button>
+      <button class="shop-now" onclick="window.location.href='shop.html'">
+        Shop Now
+      </button>
       <section class="num">
         <article class="numbers">
           <div class="international-brands">
@@ -386,18 +388,18 @@
         <h1>BROWSE BY DRESS STYLE</h1>
         <article class="dress-style">
           <div class="dress-card">
-            <img src="./image/casual.png" alt="casual" class="casual" />
-            <img src="/image/formal.png" alt="formal" class="formal" />
+            <img src="./image/casual.png" alt="casual" class="casual" title="Casual"/>
+            <img src="/image/formal.png" alt="formal" class="formal" title="Formal"/>
           </div>
           <div class="dress-card-two">
-            <img src="/image/party.png" alt="party" class="party" />
-            <img src="/image/gym.png" alt="gym" class="gym" />
+            <img src="/image/party.png" alt="party" class="party" title="Party"/>
+            <img src="/image/gym.png" alt="gym" class="gym" title="Gym"/>
           </div>
           <div class="dress-style-mobile">
-            <img src="/image/casual-mobile.jpg" alt="" class="Browse" />
-            <img src="/image/formal-mobile.jpg" alt="" class="Browse" />
-            <img src="/image/party-mobile.jpg" alt="" class="Browse" />
-            <img src="/image/gym-mobile.jpg" alt="" class="Browse" />
+            <img src="/image/casual-mobile.jpg" alt="" class="Browse" title="Casual"/>
+            <img src="/image/formal-mobile.jpg" alt="" class="Browse" title="Formal"/>
+            <img src="/image/party-mobile.jpg" alt="" class="Browse" title="Party"/>
+            <img src="/image/gym-mobile.jpg" alt="" class="Browse" title="Gym"/>
           </div>
         </article>
       </div>
@@ -511,7 +513,13 @@
       </section>
       <section class="payment-details">
         <p>Shop.co © 2000-2023, All Rights Reserved</p>
-        <div class="payment"></div>
+        <div class="payment">
+          <a href=""><img src="./image/vusa.jpg" alt="visa" title="VISA"/></a>
+          <a href=""><img src="./image/master.jpg" alt="master" title="Master"/></a>
+          <a href=""><img src="./image/paypal.jpg" alt="paypal" title="PayPal"/></a>
+          <a href=""><img src="./image/apple-pay.jpg" alt="apple-pay" title="ApplePay"/></a>
+          <a href=""><img src="./image/google-pay.jpg" alt=""google-pay title="GogglePay" /></a>
+        </div>
       </section>
     </footer>
 
@@ -621,7 +629,7 @@
         }
 
         localStorage.setItem("cart", JSON.stringify(cart));
-        window.location.href = "cart.html"; // Boom! Send them to cart
+        window.location.href = "cart.html";
       }
     </script>
   </body>

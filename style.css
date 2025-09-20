@@ -1029,7 +1029,27 @@ label {
 }
 
 .payment-details {
-  padding: 20px;
+  padding: 22px 20px 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.payment {
+  display: flex;
+  gap: 15px;
+}
+
+.payment img {
+  border-radius: 10px;
+}
+.payment img:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+.payment img:active {
+  transform: scale(1);
+  transition: 0.5s;
 }
 
 .dress-style-mobile {
@@ -1148,7 +1168,6 @@ label {
     font-weight: 600;
   }
 
-
   .nav-item {
     cursor: pointer;
   }
@@ -1185,7 +1204,6 @@ label {
     font-size: 35px;
     margin-left: 20px;
   }
-
 
   .your-style {
     all: unset;
@@ -1641,8 +1659,9 @@ label {
 
   .mail {
     position: absolute;
-    top: 54%;
-    left: 51px;
+    width: 20px;
+    top: 55%;
+    left: 55px;
     opacity: 0.8;
   }
 
@@ -1652,12 +1671,13 @@ label {
     border: none;
     outline: none;
     padding: 10px 10px 10px 49px;
+    font-size: 12px;
   }
 
   .button {
     width: 100%;
     height: 45px;
-    font-size: 19px;
+    font-size: 16px;
     border: none;
   }
 
@@ -1667,7 +1687,7 @@ label {
 
   .footer-links {
     display: grid;
-    padding: 48% 1rem 1rem 1rem;
+    padding: 40% 1rem 1rem 1rem;
   }
 
   .links-and-socials {
@@ -1710,6 +1730,37 @@ label {
 
   .list-links a:hover {
     color: black;
+  }
+
+  .payment-details {
+    /* padding: 22px 20px 20px 20px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .payment {
+    display: flex;
+    gap: 15px;
+  }
+
+  .payment img {
+    border-radius: 10px;
+    width: 60px;
+  }
+  .payment img:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
+  .payment img:active {
+    transform: scale(1);
+    transition: 0.5s;
+  }
+
+  #search-mobile-bar::placeholder {
+    font-size: 17px;
   }
 }
 
@@ -1910,8 +1961,9 @@ label {
 
   .mail {
     position: absolute;
-    top: 50%;
-    left: 51px;
+    width: 20px;
+    top: 51%;
+    left: 55px;
     opacity: 0.8;
   }
 
@@ -1935,7 +1987,7 @@ label {
   .button {
     width: 100%;
     height: 45px;
-    font-size: 19px;
+    font-size: 16px;
     border: none;
   }
 
@@ -1943,11 +1995,15 @@ label {
     font-size: 16px;
   }
 
+  #search-mobile-bar::placeholder {
+    font-size: 17px;
+  }
+
   .footer-links {
     display: grid;
     place-items: center;
     place-content: center;
-    padding: 60% 1rem 1rem 1rem;
+    padding: 40% 1rem 1rem 1rem;
   }
 
   .links-and-socials {
@@ -1979,7 +2035,35 @@ label {
   }
 
   .list-links a {
-    font-size: 18px;
+    font-size: 15px;
     font-family: sans-serif;
+  }
+
+  .payment-details {
+    /* padding: 22px 20px 20px 20px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    font-size: 16px;
+  }
+
+  .payment {
+    display: flex;
+    gap: 15px;
+  }
+
+  .payment img {
+    border-radius: 10px;
+    width: 50px;
+  }
+  .payment img:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
+  .payment img:active {
+    transform: scale(1);
+    transition: 0.5s;
   }
 }
